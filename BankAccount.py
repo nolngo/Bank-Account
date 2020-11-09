@@ -11,7 +11,7 @@ class bankAccount:
     def deposit(self):
         amount = float(input("How much would you like to deposit today? "))
         self.balance += amount
-        print(f"Amount Deposited: ${amount}")
+        print(f"Amount Deposited: ${amount}\n")
 
     def withdraw(self):
         amount = float(input("How much would you like to withdraw today? "))
@@ -19,18 +19,19 @@ class bankAccount:
         if self.balance >= amount:
             self.balance -= amount
             self.balance -= atm_fee
-            print(f"Amount Withdrawn: ${amount}")
+            print(f"Amount Withdrawn: ${amount}\n")
         else:
             self.balance -= 10.0
-            print("The amount you have entered exceeds your available balance. Your account has been charged a $10 fee.")
+            print(f"The amount you have entered exceeds your available balance. Your account has been charged a $10 fee.\n")
 
     def get_balance(self):
-        print(f"Your current account balance is: {self.balance}")
+        print(f"\nYour current account balance is: {self.balance}\n")
         return self.balance
 
     def add_interest(self):
         self.interest = self.balance * 0.00083
         self.balance += self.interest
+        print(f"\nMonthly has been earned and added to your account balance.\n Interest Earned: ${self.interest}")
         return self.interest
     def print_receipt(self):
         print(self.full_name)
